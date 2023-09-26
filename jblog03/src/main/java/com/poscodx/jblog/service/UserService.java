@@ -14,7 +14,10 @@ public class UserService {
 
 	public void join(UserVo userVo) {
 		System.out.println(userVo);
-
+		//if (userVo.getId().isEmpty()) {
+		//	userVo.setId(null);
+		//}
+		System.out.println(userVo.getId().isEmpty());
 		userRepository.insert(userVo);
 	}
 	
