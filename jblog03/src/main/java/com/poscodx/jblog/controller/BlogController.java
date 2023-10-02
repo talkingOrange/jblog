@@ -30,7 +30,7 @@ public class BlogController {
 
 	@Autowired
 	private BlogService blogService;
-	
+
 	@Autowired
 	private CategoryService categoryService;
 
@@ -76,11 +76,19 @@ public class BlogController {
 
 	@RequestMapping("/admin/category")
 	public String adminCategory(@PathVariable("id") String blogId, Model model) {
-		List<CategoryVo> list = categoryService.getCategory(blogId);	
+		List<CategoryVo> list = categoryService.getCategory(blogId);
 		model.addAttribute("list", list);
-		
+
 		model.addAttribute("selectedPage", "category");
 		return "blog/admin-category";
+	}
+
+	@RequestMapping("/admin/category/add")
+	public String add(@PathVariable("id") String blogId, CategoryVo vo) {
+		System.out.println(vo);
+		categoryService.addCategory(blogId,vo);
+		System.out.println(vo);
+		return "redirect:/{id}/admin/category";
 	}
 
 	// 블로그 글쓰기

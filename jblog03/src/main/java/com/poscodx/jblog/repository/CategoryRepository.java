@@ -16,4 +16,9 @@ public class CategoryRepository {
 	public List<CategoryVo> findById(String id) {
 		return sqlSession.selectList("category.findById", id);
 	}
+	
+	public Boolean insert(CategoryVo vo) {
+		int count = sqlSession.insert("category.insert", vo);
+		return count==1;
+	}
 }

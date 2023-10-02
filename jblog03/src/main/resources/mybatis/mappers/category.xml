@@ -9,4 +9,8 @@
 		   where blog_id=#{id }
 		]]>
 	</select>
+	
+	<insert id="insert" parameterType="categoryvo">
+		insert into category values(null, #{name }, #{description }, #{blog_id })
+	</insert>
 </mapper>

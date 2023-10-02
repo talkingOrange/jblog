@@ -16,4 +16,9 @@ public class CategoryService {
 	public List<CategoryVo> getCategory(String blogId) {
 		return categoryRepository.findById(blogId);
 	}
+	
+	public Boolean addCategory(String blogId, CategoryVo vo) {
+		vo.setBlog_id(blogId);
+		return categoryRepository.insert(vo);
+	}
 }

@@ -26,16 +26,17 @@
 					<c:set var="count" value="${fn:length(list) }" />
 					<c:forEach items="${list }" var="categoryVo" varStatus="status">
 					<tr>
-						<td>${categoryVo.no }</td>
+						<td>${count - status.index }</td>
 						<td>${categoryVo.name }</td>
 						<td>10</td>
-						<td>${categoryVo.description }</td>
+						<td>${fn:replace(categoryVo.description , newline, "<br>") }</td>
 						<td><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></td>
 					</tr>  				  
 					</c:forEach>
 				</table>
       	
       			<h4 class="n-c">새로운 카테고리 추가</h4>
+		      <form action="${pageContext.request.contextPath }/${authUser.id }/admin/category/add" method="post">
 		      	<table id="admin-cat-add">
 		      		<tr>
 		      			<td class="t">카테고리명</td>
@@ -43,13 +44,14 @@
 		      		</tr>
 		      		<tr>
 		      			<td class="t">설명</td>
-		      			<td><input type="text" name="desc"></td>
+		      			<td><input type="text" name="description"></td>
 		      		</tr>
 		      		<tr>
 		      			<td class="s">&nbsp;</td>
 		      			<td><input type="submit" value="카테고리 추가"></td>
 		      		</tr>      		      		
 		      	</table> 
+		      	</form>
 			</div>
 		</div>
 				<c:import url="/WEB-INF/views/includes/admin-footer.jsp"/>
