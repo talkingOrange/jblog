@@ -85,9 +85,18 @@ public class BlogController {
 
 	@RequestMapping("/admin/category/add")
 	public String add(@PathVariable("id") String blogId, CategoryVo vo) {
-		System.out.println(vo);
+		System.out.println("add 전" + vo);
 		categoryService.addCategory(blogId,vo);
-		System.out.println(vo);
+		System.out.println("add 후" + vo);
+		System.out.println("add 후 , no:" + vo);
+		return "redirect:/{id}/admin/category";
+	}
+	
+	@RequestMapping("/admin/category/delete/{no}")
+	public String delete(@PathVariable("no") Long no, @PathVariable("id") String blogId) {
+		
+		categoryService.deleteCategory(no, blogId);
+		
 		return "redirect:/{id}/admin/category";
 	}
 

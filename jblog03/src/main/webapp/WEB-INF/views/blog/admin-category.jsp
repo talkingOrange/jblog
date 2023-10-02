@@ -30,7 +30,9 @@
 						<td>${categoryVo.name }</td>
 						<td>10</td>
 						<td>${fn:replace(categoryVo.description , newline, "<br>") }</td>
-						<td><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></td>
+						<td>
+						<a href="${pageContext.request.contextPath }/${authUser.id }/admin/category/delete/${categoryVo.no }" class="del" style="background-image:url(${pageContext.request.contextPath}/assets/images/delete.jpg)">삭제</a>
+						</td>
 					</tr>  				  
 					</c:forEach>
 				</table>

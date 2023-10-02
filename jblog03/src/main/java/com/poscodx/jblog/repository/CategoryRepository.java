@@ -1,6 +1,8 @@
 package com.poscodx.jblog.repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +19,15 @@ public class CategoryRepository {
 		return sqlSession.selectList("category.findById", id);
 	}
 	
-	public Boolean insert(CategoryVo vo) {
-		int count = sqlSession.insert("category.insert", vo);
-		return count==1;
+	public int insert(CategoryVo vo) {
+		return sqlSession.insert("category.insert", vo);
+	}
+
+	public int deleteByNoAndBlogId(Long no, String blogId) {
+		Map<String, Object> map = new HashMap<>();
+		map.put("no", no);
+		map.put("blog_id", blogId);
+
+		return sqlSession.delete("category.deleteByNoAndBlogId", map);
 	}
 }

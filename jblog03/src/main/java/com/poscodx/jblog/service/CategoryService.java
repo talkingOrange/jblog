@@ -17,8 +17,12 @@ public class CategoryService {
 		return categoryRepository.findById(blogId);
 	}
 	
-	public Boolean addCategory(String blogId, CategoryVo vo) {
+	public int addCategory(String blogId, CategoryVo vo) {
 		vo.setBlog_id(blogId);
 		return categoryRepository.insert(vo);
+	}
+	
+	public int deleteCategory(Long no, String blogId) {
+		return categoryRepository.deleteByNoAndBlogId(no, blogId);
 	}
 }
