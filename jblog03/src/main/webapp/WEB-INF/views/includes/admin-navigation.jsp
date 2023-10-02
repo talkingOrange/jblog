@@ -6,7 +6,7 @@
 	pageEncoding="UTF-8"%>
 
 <ul class="admin-menu">
-	<li class="selected">기본설정</li>
-	<li><a href="${pageContext.request.contextPath}/${authUser.id}/admin/basic">카테고리</a></li>
-	<li><a href="">글작성</a></li>
+	<li><a href="${pageContext.request.contextPath}/${authUser.id}/admin/basic" class="${selectedPage == 'basic' ? 'selected' : ''}" >기본설정</a></li>
+	<li><a href="${pageContext.request.contextPath}/${authUser.id}/admin/category" class="${selectedPage == 'category' ? 'selected' : ''}">카테고리</a></li>
+	<li><a href="${pageContext.request.contextPath}/${authUser.id}/admin/write" class="${selectedPage == 'write' ? 'selected' : ''}">글작성</a></li>
 </ul>

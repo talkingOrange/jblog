@@ -1,22 +1,19 @@
 package com.poscodx.jblog.repository;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.poscodx.jblog.vo.BlogVo;
+import com.poscodx.jblog.vo.CategoryVo;
 
 @Repository
-public class BlogRepository {
+public class CategoryRepository {
 	@Autowired
 	private SqlSession sqlSession;
-
-	public BlogVo findById(String id) {
-		return sqlSession.selectOne("blog.findById", id);
-	}
-
-	public void update(BlogVo vo) {
-		System.out.println(vo);
-			sqlSession.update("blog.update", vo);
+	
+	public List<CategoryVo> findById(String id) {
+		return sqlSession.selectList("category.findById", id);
 	}
 }

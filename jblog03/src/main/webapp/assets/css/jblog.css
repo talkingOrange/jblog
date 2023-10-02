@@ -324,12 +324,14 @@ div#content .admin-menu li {
 	margin-left: 10px;
 }
 
-div#content .admin-menu li.selected {
-	font-weight: bold
-}
 
 div#content .admin-menu li:first-child {
 	margin-left: 0
+}
+
+div#content .admin-menu a.selected {
+	font-weight: bold;
+	color:rgb(128, 128, 255) !important;
 }
 
 div#content .admin-menu a {
