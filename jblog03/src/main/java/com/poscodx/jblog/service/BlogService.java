@@ -15,4 +15,9 @@ public class BlogService {
 	public BlogVo getBlog(String blogId) {
 		return blogRepository.findById(blogId);
 	}
+
+	public void updateBlog(BlogVo vo, String blogId) {
+		vo.setBlog_id(blogId);
+		blogRepository.update(vo);
+	}
 }

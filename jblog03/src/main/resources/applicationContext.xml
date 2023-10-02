@@ -26,7 +26,7 @@
 		<property name="password" value="jblog" />
 		 -->
 		<property name="url"
-			value="jdbc:mariadb://172.30.8.176:3307/home?charset=utf8" />
+			value="jdbc:mariadb://172.30.1.81:3307/home?charset=utf8" />
 		<property name="username" value="home" />
 		<property name="password" value="home" />
 	</bean>

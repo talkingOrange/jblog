@@ -9,4 +9,9 @@
 		   where blog_id=#{id }
 		]]>
 	</select>
+	<update id="update" parameterType="blogvo">
+				<![CDATA[
+				update blog set title=#{title }, image=#{image } where blog_id=#{blog_id }
+				]]>
+	</update>
 </mapper>

@@ -15,4 +15,9 @@ public class BlogRepository {
 		
 		return sqlSession.selectOne("blog.findById", id);
 	}
+
+	public void update(BlogVo vo) {
+		System.out.println(vo);
+			sqlSession.update("blog.update", vo);
+	}
 }

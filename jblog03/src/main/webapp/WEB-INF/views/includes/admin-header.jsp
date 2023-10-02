@@ -16,17 +16,18 @@
 			</c:when>
 
 			<c:otherwise>
+				<li><a href="${pageContext.request.contextPath}/user/logout">로그아웃</a></li>
 				<c:choose>
-					<c:when test="${authUser.id } ne ${blogVo.blog_id }">
-						<li>❤️${authUser.id } 님 블로그❤️</li>
+					<c:when test="${authUser.id != blogId}">
+						<!-- 다른 사람이 블로그를 방문할 경우 내블로그로 가기를 위한 새로운 when 조건을 추가 -->
+						<li><a href="${pageContext.request.contextPath}/${authUser.id }">내 블로그</a></li>
 					</c:when>
+					<c:otherwise>
+						<li><a
+							href="${pageContext.request.contextPath}/${authUser.id}/admin/basic">블로그
+								관리</a></li>
+					</c:otherwise>
 				</c:choose>
-				<!-- 다른 사람이 블로그를 방문할 경우 내블로그로 가기를 위한 새로운 when 조건을 추가 -->
-				<li>❤️${authUser.id } ${blogVo.blog_id } 님 블로그ㅇㅇㅇ❤️</li>
-				<li><a href="${pageContext.request.contextPath }/user/logout">로그아웃</a></li>
-				<li><a
-					href="${pageContext.request.contextPath }/${authUser.id }/admin/basic">블로그
-						관리</a></li>
 			</c:otherwise>
 		</c:choose>
 
