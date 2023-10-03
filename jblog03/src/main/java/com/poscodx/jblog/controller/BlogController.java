@@ -1,7 +1,6 @@
 package com.poscodx.jblog.controller;
 
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.ServletContext;
 
@@ -42,6 +41,10 @@ public class BlogController {
 		servletContext.setAttribute("blogTitle", blogVo.getTitle()); // "blogTitle"로 저장
 		servletContext.setAttribute("blogId", blogVo.getBlog_id()); // "blogId"로 저장
 
+		// category값
+		List<CategoryVo> list = categoryService.getCategory(blogId);
+		model.addAttribute("list", list);
+
 		model.addAttribute("blogVo", blogVo);
 		return "blog/main";
 	}
@@ -51,8 +54,10 @@ public class BlogController {
 	@RequestMapping("/admin/basic")
 	public String adminBasic(@PathVariable("id") String blogId, Model model) {
 		BlogVo blogVo = blogService.getBlog(blogId);
+
 		model.addAttribute("selectedPage", "basic");
 		model.addAttribute("blogVo", blogVo);
+
 		return "blog/admin-basic";
 	}
 
@@ -77,26 +82,24 @@ public class BlogController {
 	@RequestMapping("/admin/category")
 	public String adminCategory(@PathVariable("id") String blogId, Model model) {
 		List<CategoryVo> list = categoryService.getCategory(blogId);
-		model.addAttribute("list", list);
 
+		model.addAttribute("list", list);
 		model.addAttribute("selectedPage", "category");
+
 		return "blog/admin-category";
 	}
 
 	@RequestMapping("/admin/category/add")
 	public String add(@PathVariable("id") String blogId, CategoryVo vo) {
-		System.out.println("add 전" + vo);
-		categoryService.addCategory(blogId,vo);
-		System.out.println("add 후" + vo);
-		System.out.println("add 후 , no:" + vo);
+		categoryService.addCategory(blogId, vo);
+
 		return "redirect:/{id}/admin/category";
 	}
-	
+
 	@RequestMapping("/admin/category/delete/{no}")
 	public String delete(@PathVariable("no") Long no, @PathVariable("id") String blogId) {
-		
 		categoryService.deleteCategory(no, blogId);
-		
+
 		return "redirect:/{id}/admin/category";
 	}
 

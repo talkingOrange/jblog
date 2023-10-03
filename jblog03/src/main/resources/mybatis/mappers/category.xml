@@ -14,13 +14,13 @@
 	<insert id="insert" parameterType="categoryvo">
 		<![CDATA[
 		insert into category values(null, #{name }, #{description }, #{blog_id })
-	]]>
+		]]>
 	</insert>
 
 	<delete id='deleteByNoAndBlogId' parameterType="map">
 		<![CDATA[
 		delete from category where no =#{no } and blog_id = #{blog_id }
-	]]>
+		]]>
 	</delete>
 
 </mapper>
