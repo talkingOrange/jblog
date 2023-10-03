@@ -9,13 +9,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.poscodx.jblog.service.BlogService;
 import com.poscodx.jblog.service.CategoryService;
+import com.poscodx.jblog.service.PostService;
 import com.poscodx.jblog.service.fileUploadService;
 import com.poscodx.jblog.vo.BlogVo;
 import com.poscodx.jblog.vo.CategoryVo;
+import com.poscodx.jblog.vo.PostVo;
 
 @Controller
 @RequestMapping("/{id}")
@@ -32,6 +35,9 @@ public class BlogController {
 
 	@Autowired
 	private CategoryService categoryService;
+	
+	@Autowired
+	private PostService postService;
 
 //여길 추후에 다른 mapping 조건도 추가해야함.
 	@RequestMapping({ "" })
@@ -109,8 +115,20 @@ public class BlogController {
 	public String adminWrite(@PathVariable("id") String blogId, Model model) {
 		// BlogVo blogVo = blogService.getBlog(blogId);
 		// model.addAttribute("blogVo", blogVo);
+		// category값
+		List<CategoryVo> list = categoryService.getCategory(blogId);
+		model.addAttribute("list", list);
+		
 		model.addAttribute("selectedPage", "write");
 		return "blog/admin-write";
+	}
+	
+	@RequestMapping("/admin/write/add")
+	public String addWrite(@PathVariable("id") String blogId, PostVo postVo, @RequestParam(value="c", required=true, defaultValue="1") Long category) {
+		postVo.setCategory_no(category);
+		postService.addPost(postVo);
+
+		return "redirect:/{id}";
 	}
 
 }
