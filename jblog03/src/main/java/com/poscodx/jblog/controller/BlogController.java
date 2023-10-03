@@ -1,6 +1,7 @@
 package com.poscodx.jblog.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 
@@ -41,19 +42,30 @@ public class BlogController {
 
 //여길 추후에 다른 mapping 조건도 추가해야함.
 	@RequestMapping({ "" })
-	public String index(@PathVariable("id") String blogId, Model model) {
+	public String index(@PathVariable("id") String blogId, Model model, @RequestParam(value="c", required=true, defaultValue="") Long categoryNo, @RequestParam(value="n", required=true, defaultValue="") Long postNo) {
 		BlogVo blogVo = blogService.getBlog(blogId);
-
+		
 		servletContext.setAttribute("blogTitle", blogVo.getTitle()); // "blogTitle"로 저장
 		servletContext.setAttribute("blogId", blogVo.getBlog_id()); // "blogId"로 저장
 
 		// category값
 		List<CategoryVo> list = categoryService.getCategory(blogId);
 		model.addAttribute("list", list);
+		
+		// post값
+		List<PostVo> postList = postService.getPost(blogId, categoryNo);
+		model.addAttribute("postList", postList);
+		
+		// post 개별 값
+		PostVo postVo = postService.getPostDetail(blogId, categoryNo, postNo);
+		
+		model.addAttribute("postVo", postVo);
 
 		model.addAttribute("blogVo", blogVo);
 		return "blog/main";
 	}
+	
+	
 
 	// 블로그 기본 관리
 

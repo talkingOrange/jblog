@@ -6,17 +6,21 @@ public class PostVo {
 	private String title;
 	private String contents;
 	private Long category_no;
+	private String date;
 	
 	public PostVo() {
 	}
 
-	public PostVo(Long no, String title, String contents, Long category_no) {
+	
+	public PostVo(Long no, String title, String contents, Long category_no, String date) {
 		super();
 		this.no = no;
 		this.title = title;
 		this.contents = contents;
 		this.category_no = category_no;
+		this.date = date;
 	}
+
 
 	public Long getNo() {
 		return no;
@@ -50,9 +54,22 @@ public class PostVo {
 		this.category_no = category_no;
 	}
 
+	public String getDate() {
+		return date;
+	}
+
+
+	public void setDate(String date) {
+		this.date = date;
+	}
+
+
 	@Override
 	public String toString() {
 		return "PostVo [no=" + no + ", title=" + title + ", contents=" + contents + ", category_no=" + category_no
-				+ "]";
+				+ ", date=" + date + "]";
 	}
+
+
+	
 }
