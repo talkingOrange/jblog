@@ -13,7 +13,7 @@
 
 	<insert id="insert" parameterType="categoryvo">
 		<![CDATA[
-		insert into category values(null, #{name }, #{description }, #{blog_id })
+		insert into category values(null, #{name }, #{description }, #{blog_id }, 0)
 		]]>
 	</insert>
 
@@ -22,5 +22,13 @@
 		delete from category where no =#{no } and blog_id = #{blog_id }
 		]]>
 	</delete>
+
+	<update id="update" parameterType="categoryvo">
+				<![CDATA[
+					UPDATE category 
+SET postNum = postNum + 1 
+WHERE no = #{no};
+				]]>
+	</update>
 
 </mapper>

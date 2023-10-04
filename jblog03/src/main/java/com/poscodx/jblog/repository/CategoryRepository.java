@@ -30,4 +30,8 @@ public class CategoryRepository {
 
 		return sqlSession.delete("category.deleteByNoAndBlogId", map);
 	}
+
+	public void update(Long no) {
+		sqlSession.update("category.update", no);		
+	}
 }

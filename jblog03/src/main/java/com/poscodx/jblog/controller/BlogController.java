@@ -139,6 +139,8 @@ public class BlogController {
 	public String addWrite(@PathVariable("id") String blogId, PostVo postVo, @RequestParam(value="c", required=true, defaultValue="1") Long category) {
 		postVo.setCategory_no(category);
 		postService.addPost(postVo);
+		
+		categoryService.updateCategoryPostNum(category);
 
 		return "redirect:/{id}";
 	}

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.poscodx.jblog.repository.CategoryRepository;
+import com.poscodx.jblog.vo.BlogVo;
 import com.poscodx.jblog.vo.CategoryVo;
 
 @Service
@@ -24,5 +25,9 @@ public class CategoryService {
 	
 	public int deleteCategory(Long no, String blogId) {
 		return categoryRepository.deleteByNoAndBlogId(no, blogId);
+	}
+	
+	public void updateCategoryPostNum(Long no) {
+		categoryRepository.update(no);
 	}
 }
