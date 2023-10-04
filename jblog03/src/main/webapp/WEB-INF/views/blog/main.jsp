@@ -26,7 +26,14 @@ pageContext.setAttribute("newline", "\n");
 				</div>
 				<ul class="blog-list">
 				<c:forEach items="${postList }" var="postVo" varStatus="status">
+				<c:choose>
+				<c:when test="${empty categoryNo }">
+					<li><a href="${pageContext.request.contextPath }/${blogVo.blog_id }?n=${postVo.no }">${postVo.title }</a> <span>${postVo.date }</span>	</li>
+				</c:when>
+				<c:otherwise>
 					<li><a href="${pageContext.request.contextPath }/${blogVo.blog_id }?c=${postVo.category_no }&n=${postVo.no }">${postVo.title }</a> <span>${postVo.date }</span>	</li>
+				</c:otherwise>
+				</c:choose>
 				</c:forEach>
 				</ul>
 			</div>

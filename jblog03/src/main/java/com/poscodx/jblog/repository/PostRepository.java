@@ -30,7 +30,7 @@ public class PostRepository {
 	public PostVo findByPost(String blogId, Long categoryNo, Long postNo) {
 		Map<String, Object> map = new HashMap<>();
 		map.put("blog_id", blogId);
-		map.put("category_no", categoryNo);
+		map.put("category_no", categoryNo);		
 		map.put("post_no", postNo);		
 		return sqlSession.selectOne("post.findByPost", map);
 	}

@@ -16,7 +16,6 @@ public class BlogRepository {
 	}
 
 	public void update(BlogVo vo) {
-		System.out.println(vo);
 			sqlSession.update("blog.update", vo);
 	}
 }

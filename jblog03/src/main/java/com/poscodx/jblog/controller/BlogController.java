@@ -40,7 +40,6 @@ public class BlogController {
 	@Autowired
 	private PostService postService;
 
-//여길 추후에 다른 mapping 조건도 추가해야함.
 	@RequestMapping({ "" })
 	public String index(@PathVariable("id") String blogId, Model model, @RequestParam(value="c", required=true, defaultValue="") Long categoryNo, @RequestParam(value="n", required=true, defaultValue="") Long postNo) {
 		BlogVo blogVo = blogService.getBlog(blogId);
@@ -52,12 +51,16 @@ public class BlogController {
 		List<CategoryVo> list = categoryService.getCategory(blogId);
 		model.addAttribute("list", list);
 		
+		
 		// post값
 		List<PostVo> postList = postService.getPost(blogId, categoryNo);
 		model.addAttribute("postList", postList);
 		
 		// post 개별 값
-		PostVo postVo = postService.getPostDetail(blogId, categoryNo, postNo);
+		PostVo postVo = postService.getPostDetail(blogId,categoryNo, postNo);
+		
+		model.addAttribute("categoryNo", categoryNo);
+		model.addAttribute("postNo", postNo);
 		
 		model.addAttribute("postVo", postVo);
 
