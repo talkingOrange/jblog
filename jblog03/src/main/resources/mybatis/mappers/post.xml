@@ -70,5 +70,10 @@ ORDER BY p.no desc
 		]]>
 	</insert>
 
+<delete id='deleteByNo' parameterType="map">
+		<![CDATA[
+		delete from post where category_no =#{no }
+		]]>
+	</delete>
 
 </mapper>

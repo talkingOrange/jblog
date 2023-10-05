@@ -34,4 +34,8 @@ public class PostRepository {
 		map.put("post_no", postNo);		
 		return sqlSession.selectOne("post.findByPost", map);
 	}
+
+	public int deleteByNo(Long no) {
+		return sqlSession.delete("post.deleteByNo", no);
+	}
 }

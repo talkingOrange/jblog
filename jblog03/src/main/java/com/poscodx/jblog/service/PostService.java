@@ -25,5 +25,9 @@ public class PostService {
 	public int addPost(PostVo vo) {
 		return postRepository.insert(vo);
 	}
+	
+	public int deletePost(Long no) {
+		return postRepository.deleteByNo(no);
+	}
 
 }

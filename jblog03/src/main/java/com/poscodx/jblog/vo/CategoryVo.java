@@ -1,7 +1,11 @@
 package com.poscodx.jblog.vo;
 
+import javax.validation.constraints.NotEmpty;
+
 public class CategoryVo {
 	private Long no;
+	
+	@NotEmpty
 	private String name;
 	private String description;
 	private String blog_id;
@@ -9,8 +13,6 @@ public class CategoryVo {
 	
 	public CategoryVo() {
 	}
-
-	
 
 	public CategoryVo(Long no, String name, String description, String blog_id, Long postNum) {
 		super();
