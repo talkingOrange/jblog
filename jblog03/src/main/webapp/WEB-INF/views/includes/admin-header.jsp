@@ -6,7 +6,7 @@
 	pageEncoding="UTF-8"%>
 <div id="header">
 	<h1>
-		<a href="${pageContext.request.contextPath }/${blogVo.blog_id }"
+		<a href="${pageContext.request.contextPath }/${blogId }"
 			style="color: white;"> ${blogTitle } </a>
 	</h1>
 	<ul>

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.poscodx.jblog.vo.UserVo;
+import com.poscodx.jblog.service.CategoryService;
 import com.poscodx.jblog.service.UserService;
 
 
@@ -20,6 +21,8 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	private CategoryService categoryService;
 	
 	@RequestMapping(value="/join", method=RequestMethod.GET)
 	public String join(@ModelAttribute UserVo userVo) {
@@ -34,6 +37,8 @@ public class UserController {
 			return "user/join";
 		}
 		userService.join(userVo);
+		categoryService.addDefaultCategory(userVo.getId());
+		
 		return "redirect:/user/joinsuccess";
 	}
 	

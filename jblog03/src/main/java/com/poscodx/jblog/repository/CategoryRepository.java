@@ -34,4 +34,8 @@ public class CategoryRepository {
 	public void update(Long no) {
 		sqlSession.update("category.update", no);		
 	}
+
+	public int insertDefault(String blogId) {
+		return sqlSession.insert("category.insertDefault", blogId);
+	}
 }

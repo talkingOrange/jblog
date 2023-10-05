@@ -11,6 +11,12 @@
 		]]>
 	</select>
 
+	<insert id="insertDefault" parameterType="categoryvo">
+		<![CDATA[
+		insert into category values(null,'미분류', '카테고리를 지정하지 않은 경우', #{blog_id }, 0)
+		]]>
+	</insert>
+	
 	<insert id="insert" parameterType="categoryvo">
 		<![CDATA[
 		insert into category values(null, #{name }, #{description }, #{blog_id }, 0)

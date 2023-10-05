@@ -22,6 +22,10 @@ public class CategoryService {
 		vo.setBlog_id(blogId);
 		return categoryRepository.insert(vo);
 	}
+
+	public int addDefaultCategory(String blogId) {
+		return categoryRepository.insertDefault(blogId);
+	}
 	
 	public int deleteCategory(Long no, String blogId) {
 		return categoryRepository.deleteByNoAndBlogId(no, blogId);
