@@ -4,12 +4,12 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>jblog03</display-name>
-	
+
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:applicationContext.xml</param-value>
 	</context-param>
-	
+
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
@@ -41,7 +41,7 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!-- 공통 에러 페이지 -->
+	<!-- 공통 에러 페이지
 	<error-page>
 		<error-code>404</error-code>
 		<location>/WEB-INF/views/error/404.jsp</location>
@@ -49,6 +49,15 @@
 	<error-page>
 		<error-code>500</error-code>
 		<location>/WEB-INF/views/error/500.jsp</location>
+	</error-page> -->
+
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/views/main/index.jsp</location>
+	</error-page>
+<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-INF/views/main/index.jsp</location>
 	</error-page>
 
 	<!-- Default Files -->

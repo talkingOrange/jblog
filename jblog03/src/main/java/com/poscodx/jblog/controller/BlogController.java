@@ -85,8 +85,6 @@ public class BlogController {
 			
 			return "redirect:/{id}";
 		}
-		System.out.println(authUser.getId());
-		System.out.println(blogId);
 
 		model.addAttribute("selectedPage", "basic");
 		model.addAttribute("blogVo", blogVo);
@@ -95,9 +93,9 @@ public class BlogController {
 	}
 
 	@RequestMapping("/admin/basic/update")
-	public String update(@PathVariable("id") String blogId, BlogVo vo, MultipartFile file) {
+	public String update(@PathVariable("id") String blogId,  BlogVo vo, MultipartFile file) {
 		String image = fileUploadService.restore(file);
-
+		
 		if (image != null) {
 			vo.setImage(image);
 		}
@@ -113,9 +111,18 @@ public class BlogController {
 	// 블로그 카테고리
 
 	@RequestMapping("/admin/category")
-	public String adminCategory(@PathVariable("id") String blogId, Model model) {
+	public String adminCategory(@PathVariable("id") String blogId, HttpServletRequest request, Model model) {
 		List<CategoryVo> list = categoryService.getCategory(blogId);
 
+		HttpSession session = request.getSession();
+		UserVo authUser = (UserVo) session.getAttribute("authUser");
+
+		if (!authUser.getId().equals(blogId)) {
+			
+			return "redirect:/{id}";
+		}
+		
+		
 		model.addAttribute("list", list);
 		model.addAttribute("selectedPage", "category");
 
@@ -141,9 +148,15 @@ public class BlogController {
 	// 블로그 글쓰기
 
 	@RequestMapping("/admin/write")
-	public String adminWrite(@PathVariable("id") String blogId, Model model) {
-		// BlogVo blogVo = blogService.getBlog(blogId);
-		// model.addAttribute("blogVo", blogVo);
+	public String adminWrite(@PathVariable("id") String blogId, HttpServletRequest request, Model model) {
+		HttpSession session = request.getSession();
+		UserVo authUser = (UserVo) session.getAttribute("authUser");
+
+		if (!authUser.getId().equals(blogId)) {
+			
+			return "redirect:/{id}";
+		}
+		
 		// category값
 		List<CategoryVo> list = categoryService.getCategory(blogId);
 		model.addAttribute("list", list);
