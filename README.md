@@ -36,8 +36,8 @@
 
 - 입력창 Empty 및 글자수 체크 ✅
 
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/ae518757-b86f-4842-a886-5391450d4430" width="47%">
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/a9efdbb3-4a69-4e1d-9a00-33483300af13" width="47%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/ae518757-b86f-4842-a886-5391450d4430" width="49%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/a9efdbb3-4a69-4e1d-9a00-33483300af13" width="50%">
 
 ### 👉 회원가입완료: /jblog03/user/joinsuccess
 
@@ -89,8 +89,8 @@
 
 - 카테고리별 검색 가능 ✅: /jblog03/{id}?c={category_no} , /jblog03/{id}?c={category_no}&n={post_no}
 
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/f39b8fd2-d866-4024-b508-1e655c6759d5" width="47%">
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/cf8b432d-9416-4baf-a0ed-ab40ce101d4f" width="47%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/f39b8fd2-d866-4024-b508-1e655c6759d5" width="49%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/cf8b432d-9416-4baf-a0ed-ab40ce101d4f" width="50%">
 
 
 - 글 상세보기 ✅: /jblog03/{id}?n={post_no}
@@ -114,8 +114,8 @@
 
 2. 이미지 변경 👌
 
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/46b458ad-74e1-4666-b71f-c3077d246c58" width="47%">
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/a02c0a6e-464b-4120-870b-6ac08c6e6287" width="47%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/46b458ad-74e1-4666-b71f-c3077d246c58" width="49%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/a02c0a6e-464b-4120-870b-6ac08c6e6287" width="50%">
 
 
 
@@ -132,8 +132,8 @@
 
 - Create ✅
 
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/c274ee72-7f6a-4ffa-8767-8d68f0452b95" width="47%">
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/e915c26f-32c9-4a7a-9963-416043287a4d" width="47%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/c274ee72-7f6a-4ffa-8767-8d68f0452b95" width="49%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/e915c26f-32c9-4a7a-9963-416043287a4d" width="50%">
 
 - Update ✅
 
@@ -151,8 +151,8 @@
 
 - Create ✅ : 성공 시, redirect:/{id} 👌
 
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/2da5401c-228c-4f13-aea8-350c5416841e" width="47%">
-<img src="https://github.com/talkingOrange/jblog/assets/88815795/918bc718-dfb8-46d2-8b46-0757a2b19ab1" width="47%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/2da5401c-228c-4f13-aea8-350c5416841e" width="49%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/918bc718-dfb8-46d2-8b46-0757a2b19ab1" width="50%">
 
 
 
@@ -164,6 +164,8 @@
 
 
 
+
+---
 
 
 
