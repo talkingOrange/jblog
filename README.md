@@ -169,11 +169,12 @@
 
 
 
-# SQL
+# 🧡 DB 설계 🧡
+
+![image](https://github.com/talkingOrange/jblog/assets/88815795/fc0f4179-abca-467a-81e4-0ad0999219c5)
 
 
-
-- 테이블 생성
+- SQL 테이블 생성
 
 ```
 -- 사용자(user) 테이블 생성
