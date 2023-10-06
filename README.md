@@ -63,16 +63,90 @@
 
 ### 👉 블로그: /jblog03/{id}
 
+- 회원가입한 유저, 자동 블로그 생성 ✅
+  + 기본 카테고리 추가 및 기본 타이틀, 이미지 설정 👌
+  
+ ![image](https://github.com/talkingOrange/jblog/assets/88815795/05cb5f9d-e768-41b7-a56b-4a344d910e07)
+
+
 - 블로그 관리 버튼 유무 ✅
 
-   + 내 블로그인 경우, [블로그 관리] [로그아웃] 버튼 생성 
+1. 내 블로그인 경우, [블로그 관리] [로그아웃] 버튼 생성 👌
 
 ![image](https://github.com/talkingOrange/jblog/assets/88815795/9fc376b7-7073-4bc1-96cd-eb1080ad8e79)
 
-
-   + 타인 블로그인 경우, [블로그 관리] [로그아웃] 버튼 생성 
+ 
+   2. 타인 블로그인 경우, [내블로그] [로그아웃] 버튼 생성 👌
 
 ![image](https://github.com/talkingOrange/jblog/assets/88815795/2acb2a5a-54df-4ecc-8946-0a211c9b19b9)
+
+
+   3. 로그인 하지 않은 유저의 경우, [로그인] 버튼 생성 👌
+
+![image](https://github.com/talkingOrange/jblog/assets/88815795/1c16f03f-eaa2-4d22-892f-1e4a1acd4383)
+
+
+
+### 👉 블로그 관리; 기본설정: /jblog03/{id}/admin/basic
+
+![image](https://github.com/talkingOrange/jblog/assets/88815795/a7582684-3c61-4b66-a9b6-93a15a515379)
+
+- Read ✅
+
+- Update ✅
+
+
+ 1. 제목만 변경 가능 👌
+    - 변경 시, Header와 Footer 동시 변경 ✨
+
+![image](https://github.com/talkingOrange/jblog/assets/88815795/d9512d9d-76e2-48a9-964e-06de44157971)
+
+2. 이미지 변경 👌
+
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/46b458ad-74e1-4666-b71f-c3077d246c58" width="47%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/a02c0a6e-464b-4120-870b-6ac08c6e6287" width="47%">
+
+
+
+
+### 👉 블로그 관리; 카테고리: /jblog03/{id}/admin/category
+
+
+- Read ✅
+
+![image](https://github.com/talkingOrange/jblog/assets/88815795/b20f9c5f-b8d0-4dcf-b2aa-45ae21f14a01)
+
+
+- Create ✅
+
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/c274ee72-7f6a-4ffa-8767-8d68f0452b95" width="47%">
+<img src="https://github.com/talkingOrange/jblog/assets/88815795/e915c26f-32c9-4a7a-9963-416043287a4d" width="47%">
+
+- Update ✅
+
+ + 글 작성 시, post 수 + 1
+
+- Delete ✅
+
+ + 카테고리 삭제 시, 해당 카테고리로 작성된 글 자동 삭제
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
