@@ -169,6 +169,74 @@
 
 
 
+# SQL
 
 
+
+- 테이블 생성
+
+```
+-- 사용자(user) 테이블 생성
+CREATE TABLE user (
+    id VARCHAR(45) PRIMARY KEY NOT NULL,
+    name VARCHAR(45) NOT NULL,
+    password VARCHAR(64) NOT NULL
+);
+
+-- 1:1 식별 관계 
+ 
+ create table blog(
+blog_id VARCHAR(45) PRIMARY KEY NOT NULL,
+ title varchar(200) not null,
+ image varchar(200) not null,
+
+ foreign key (blog_id) references user (id)
+ );
+ 
+ -- 1:다 비식별 관계
+ 
+ create table category(
+  no int not null auto_increment,
+ name varchar(45) not null,
+description varchar(200) not null,
+blog_id VARCHAR(45) NOT NULL,
+postNum Long NOT NULL default 0,
+ 
+primary key(no),
+foreign key (blog_id) references blog (blog_id) ON DELETE CASCADE
+ );
+ 
+ 
+ -- 1: 다 비식별 관계
+ 
+create table post(
+no int not null auto_increment,
+ title varchar(200) not null,
+contents TEXT not null,
+   category_no int not null,
+   date DATE NOT NULL,
+   
+primary key(no),
+foreign key (category_no) references category (no) ON DELETE CASCADE
+ );
+ 
+
+```
+
+
+- 트리거
+
+```
+DELIMITER //
+
+CREATE TRIGGER CreateUserBlogTitle
+AFTER INSERT ON user
+FOR EACH ROW
+BEGIN
+    INSERT INTO blog (blog_id, title, image) VALUES (NEW.id, CONCAT(NEW.id, '님의 블로그'), 'assets/images/spring-logo.jpg');
+END;
+//
+
+DELIMITER ;
+```
 
