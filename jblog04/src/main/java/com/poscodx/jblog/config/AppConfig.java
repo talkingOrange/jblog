@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 @Configuration
 @EnableAspectJAutoProxy
 @ComponentScan({"com.poscodx.jblog.repository", "com.poscodx.jblog.service"})
-@Import({DBConfig.class})
+@Import({DBConfig.class, MyBatisConfig.class})
 public class AppConfig {
 
 }
