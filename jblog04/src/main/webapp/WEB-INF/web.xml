@@ -5,9 +5,15 @@
 	version="2.5">
 	<display-name>jblog04</display-name>
 
+	<!-- 컨테이너 만듦 -->
+	<context-param>
+		<param-name>contextClass</param-name>
+		<param-value>org.springframework.context.annotation.AnnotationConfigApplicationContext</param-value>
+	</context-param>
+	
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:applicationContext.xml</param-value>
+		<param-value>com.poscodx.mysite.config.AppConfig</param-value>
 	</context-param>
 
 	<listener>
@@ -41,21 +47,15 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!-- 공통 에러 페이지
-	<error-page>
-		<error-code>404</error-code>
-		<location>/WEB-INF/views/error/404.jsp</location>
-	</error-page>
-	<error-page>
-		<error-code>500</error-code>
-		<location>/WEB-INF/views/error/500.jsp</location>
-	</error-page> -->
+	<!-- 공통 에러 페이지 <error-page> <error-code>404</error-code> <location>/WEB-INF/views/error/404.jsp</location> 
+		</error-page> <error-page> <error-code>500</error-code> <location>/WEB-INF/views/error/500.jsp</location> 
+		</error-page> -->
 
 	<error-page>
 		<error-code>404</error-code>
 		<location>/WEB-INF/views/main/index.jsp</location>
 	</error-page>
-<error-page>
+	<error-page>
 		<error-code>500</error-code>
 		<location>/WEB-INF/views/main/index.jsp</location>
 	</error-page>
